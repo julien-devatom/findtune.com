@@ -7,7 +7,6 @@ import icon2 from  './music.svg'
 import icon3 from  './guitar.svg'
 import icon4 from  './friends.svg'
 
-
 export class MultiActionButton extends Component {
 
   buttonsList = [
