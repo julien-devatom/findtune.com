@@ -17,6 +17,7 @@ import MoreIcon from '@material-ui/icons/MoreVert';
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import {Link} from 'react-router-dom';
+import './navbar.css';
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -214,11 +215,46 @@ export default function NavBar() {
                 <MailIcon />
               </Badge>
             </IconButton>
-            <IconButton aria-label="show 17 new notifications" color="inherit">
-              <Badge badgeContent={17} color="secondary">
+            <IconButton color="inherit" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <Badge badgeContent={5} color="secondary">
                 <NotificationsIcon />
               </Badge>
             </IconButton>
+        <ul class="dropdown-menu dropdown-menu">
+        <li>
+          <a href="#" class="top-text-block">
+            <div class="top-text-heading">You have <b>3 new themes</b> trending</div>
+            <div class="top-text-light">15 minutes ago</div>
+          </a> 
+        </li>
+        <li>
+          <a href="#" class="top-text-block">
+            <div class="top-text-heading">New asset recommendations in <b>Electronic Synth ZX3LK</b></div>
+            <div class="top-text-light">2 hours ago</div>
+          </a> 
+        </li>
+        <li>
+          <a href="#" class="top-text-block">
+            <div class="top-text-heading">New friends recommendations</div>
+            <div class="top-text-light">4 hours ago</div>
+          </a> 
+        </li>
+        <li>
+          <a href="#" class="top-text-block">
+            <div class="top-text-heading">Band request received</div>
+            <div class="top-text-light">4 hours ago</div>
+          </a> 
+        </li>
+        <li>
+          <a href="#" class="top-text-block">
+            <div class="top-text-heading">Julia Thomas is On Air</div>
+            <div class="top-text-light">5 hours ago</div>
+          </a> 
+        </li>
+       <li>
+        <div class="loader-topbar"></div>
+       </li>
+      </ul>
             <IconButton
               edge="end"
               aria-label="account of current user"
