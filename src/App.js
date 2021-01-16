@@ -1,5 +1,6 @@
 
 import React from "react";
+import './assets/app';
 
 import {
   BrowserRouter as Router,
