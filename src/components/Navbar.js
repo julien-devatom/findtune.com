@@ -1,3 +1,4 @@
+import './css/components/navbar.css'
 import {Link} from "react-router-dom";
 
 export const Navbar = () => {
@@ -16,10 +17,10 @@ export const Navbar = () => {
                         <Link className="nav-link" to="/">Home</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/profile">Profile</Link>
+                        <Link className="nav-link" to="/bands">Bands</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/login">Login</Link>
+                        <Link className="nav-link" to="/artist">Artists</Link>
                     </li>
                     <li className="nav-item dropdown">
                         <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
