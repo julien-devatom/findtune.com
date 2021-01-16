@@ -1,10 +1,13 @@
 import '../assets/css/components/navbar.css'
 import {Link} from "react-router-dom";
+// get our fontawesome imports
+import { faEnvelope as farEnvelope, faBell as farBell } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const Navbar = () => {
     return(
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <a className="navbar-brand" href="#">FindTune</a>
+            <img src="https://julienthomasfeatures.s3.eu-west-3.amazonaws.com/logo2.png" height="6%" width="6%"/>
             <button className="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -34,15 +37,16 @@ export const Navbar = () => {
                             <a className="dropdown-item" href="#">Something else here</a>
                         </div>
                     </li>
-                    <li className="nav-item">
-                        <a className="nav-link disabled" href="#">Disabled</a>
-                    </li>
                 </ul>
+                <div>
+                </div>
                 <form className="form-inline my-2 my-lg-0">
                     <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
                         <button className="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
                 </form>
-            </div>
+                </div>
+                <FontAwesomeIcon icon={farEnvelope} size="2x"/>
+                <FontAwesomeIcon icon={farBell} size="2x"/>
         </nav>)
 
 }
