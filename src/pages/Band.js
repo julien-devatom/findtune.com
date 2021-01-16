@@ -26,15 +26,21 @@ export default function Band () {
 
     return(
         <div>
-            <div className="container">
+            <div className="container mt-3">
                 <BandCard band={band} />
             </div>
-        </divdiv>
+        </div>
     )
 }
 
 function BandCard ({band}){
     return(
 
+        <div className="card card_band_profile">
+            <div className="card-body">
+                <h1>{band.name}</h1>
+            </div>
+
+        </div>
     )
 }
