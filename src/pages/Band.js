@@ -35,10 +35,6 @@ export default function Band () {
 
 function BandCard ({band}){
     return(
-<<<<<<< HEAD
-        null
-    );
-=======
 
         <div className="card card_band_profile">
             <div className="card-body">
@@ -47,5 +43,4 @@ function BandCard ({band}){
 
         </div>
     )
->>>>>>> d011b334f57c9ec2e2ca79ae875c3951aa654b3f
 }
