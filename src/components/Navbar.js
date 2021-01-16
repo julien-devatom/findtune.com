@@ -14,6 +14,9 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
+import Tabs from "@material-ui/core/Tabs";
+import Tab from "@material-ui/core/Tab";
+import {Link} from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -80,12 +83,20 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function NavBar() {
+
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+
+  const [value, setValue] = React.useState(0);
+
+  const handleChangeTabs = (event, newValue) => {
+    setValue(newValue);
+  };
+
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -116,7 +127,7 @@ export default function NavBar() {
       onClose={handleMenuClose}
     >
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+        <MenuItem onClick={handleMenuClose}>Log Out</MenuItem>
     </Menu>
   );
 
@@ -174,8 +185,15 @@ export default function NavBar() {
             <MenuIcon />
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
-            Material-UI
+            FindTune
           </Typography>
+
+          <Tabs value={value} onChange={handleChangeTabs}>
+                <Tab label="Home" component={Link} to="/" />
+                <Tab label="Bands" component={Link} to="/bands" />
+                <Tab label="Artists" component={Link} to="/artists" />
+            </Tabs>
+
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
