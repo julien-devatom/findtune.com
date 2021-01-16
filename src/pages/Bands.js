@@ -75,17 +75,17 @@ function BandCard ({band}){
                         </AvatarGroup>
                     </div>
                 </div>
-                <div className="col-lg-3">
-                    <div className="row">
+                <div className="col-lg-3 ">
+                    <div className="row d-flex justify-content-center">
                         <img src="https://julienthomasfeatures.s3.eu-west-3.amazonaws.com/deezer.svg" className="img-fluid"/>
                     </div>
-                    <div className="row">
-                        <img src="https://julienthomasfeatures.s3.eu-west-3.amazonaws.com/deezer.svg"/>
+                    <div className="row d-flex justify-content-center">
+                        <img src="https://julienthomasfeatures.s3.eu-west-3.amazonaws.com/spotify.svg"/>
                     </div>
-                </div>
                 </div>
             </div>
         </div>
+    </div>
     )
 
 }
