@@ -1,0 +1,51 @@
+/**
+    Font style
+ */
+@font-face {
+    font-family: SegoeUI;
+    src:
+            local("Segoe UI Light"),
+            url(https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.woff2) format("woff2"),
+            url(https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.woff) format("woff"),
+            url(https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.ttf) format("truetype");
+    font-weight: 100;
+}
+
+/**
+    Bands card
+ */
+.card_band{
+    border: 2px solid #c5e7ff;
+    border-radius: 15px;
+}
+
+
+/**
+    Artist card
+ */
+.card_artist{
+    border: 2px gray solid;
+    border-radius: 15px;
+    color: gray;
+}
+.card_artist h3{
+    font-weight: bold;
+    text-align: center !important;
+}
+.card_artist_followed{
+    border: 2px #5CB85C solid ;
+}
+.card_artist:hover{
+    transform: translateY(-10px);
+    transition: 1s ease-out;
+}
+
+
+body{
+    background-color: #ECF7FF !important;
+    font-family: SegoeUI, sans-serif !important;
+    box-sizing: border-box !important;
+}
+
+
+
