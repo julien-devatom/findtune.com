@@ -25,7 +25,7 @@ function App() {
       <Router>
         <div>
           <Navbar />
-          <div class="multi-action-button">
+          <div className="multi-action-button">
             <MultiActionButton />
           </div>
           <Switch>
