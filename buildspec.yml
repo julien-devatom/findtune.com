@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     commands:
-      - curl -sL https://deb.nodesource.com/setup_15.x
+      - curl -sL https://deb.nodesource.com/setup_15.x | bash -
       - apt install -y nodejs
       - npm install npm@latest -g
   pre_build:
