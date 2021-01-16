@@ -1,7 +1,14 @@
+import LoginType from "../components/form/LoginType";
+
 export const Login = () => {
     return(
-        <div>
-            <h1>Login</h1>
-        </div>
+        <section className="container mt-4 d-flex justify-content-center align-items-center">
+            <div className="card">
+                <div className="card-body">
+                    <LoginType />
+                </div>
+            </div>
+        </section>
     )
 }
+
