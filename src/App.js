@@ -17,6 +17,7 @@ import Artists from "./pages/Artists";
 import Artist from "./pages/Artist";
 import {Register} from "./pages/Register";
 import {MultiActionButton} from "./components/MultiActionButton";
+import "./app.css"
 
 
 function App() {
@@ -24,7 +25,9 @@ function App() {
       <Router>
         <div>
           <Navbar />
-          <MultiActionButton/>
+          <div class="multi-action-button">
+            <MultiActionButton />
+          </div>
           <Switch>
             <Route path="/profile">
               <Profile />
