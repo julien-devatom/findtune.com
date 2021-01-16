@@ -29,12 +29,12 @@ export default function Band () {
             <div className="container">
                 <BandCard band={band} />
             </div>
-        </divdiv>
+        </div>
     )
 }
 
 function BandCard ({band}){
     return(
-
-    )
+        null
+    );
 }
