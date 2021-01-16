@@ -20,6 +20,27 @@
 }
 
 
+/**
+    Artist card
+ */
+.card_artist{
+    border: 2px gray solid;
+    border-radius: 15px;
+    color: gray;
+}
+.card_artist h3{
+    font-weight: bold;
+    text-align: center !important;
+}
+.card_artist_followed{
+    border: 2px #5CB85C solid ;
+}
+.card_artist:hover{
+    transform: translateY(-10px);
+    transition: 1s ease-out;
+}
+
+
 body{
     background-color: #ECF7FF !important;
     font-family: SegoeUI, sans-serif !important;
