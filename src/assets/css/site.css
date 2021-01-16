@@ -10,7 +10,18 @@
             url(https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.ttf) format("truetype");
     font-weight: 100;
 }
-
+/**
+    Global edits
+ */
+.fa-mars{
+    color: dodgerblue;
+}
+.fa-venus{
+    color: hotpink;
+}
+.fa-heart{
+    color: red;
+}
 /**
     Bands card
  */
@@ -40,6 +51,10 @@
     transition: 1s ease-out;
 }
 
+.card_artist_publication{
+    border: lightblue 1px solid;
+    border-radius: 15px;
+}
 
 body{
     background-color: #ECF7FF !important;

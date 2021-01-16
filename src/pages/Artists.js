@@ -26,7 +26,7 @@ export default function Artists () {
         img_url: "https://julienthomasfeatures.s3.eu-west-3.amazonaws.com/user.svg"
     }
     return(
-        <section className="container">
+        <section className="container mt-4">
             <div className="row">
                 <ArtistCard artist={artist} isFollowed={false} />
                 <ArtistCard artist={artist} isFollowed={true} />
