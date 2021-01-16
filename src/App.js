@@ -17,6 +17,7 @@ import Artists from "./pages/Artists";
 import Artist from "./pages/Artist";
 import {Register} from "./pages/Register";
 
+
 function App() {
   return (
       <Router>
