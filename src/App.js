@@ -17,7 +17,9 @@ import Artists from "./pages/Artists";
 import Artist from "./pages/Artist";
 import {Register} from "./pages/Register";
 import {MultiActionButton} from "./components/MultiActionButton";
+import Footer from "./components/Footer"
 import "./app.css"
+import 'mdbreact/dist/css/mdb.css'
 
 
 function App() {
@@ -55,6 +57,7 @@ function App() {
             </Route>
           </Switch>
         </div>
+        <Footer />
       </Router>
   );
 }
