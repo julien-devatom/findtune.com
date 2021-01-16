@@ -16,6 +16,7 @@ import Band from "./pages/Band";
 import Artists from "./pages/Artists";
 import Artist from "./pages/Artist";
 import {Register} from "./pages/Register";
+import {MultiActionButton} from "./components/MultiActionButton";
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
       <Router>
         <div>
           <Navbar />
+          <MultiActionButton/>
           <Switch>
             <Route path="/profile">
               <Profile />
