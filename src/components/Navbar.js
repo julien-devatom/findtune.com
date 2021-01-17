@@ -14,10 +14,13 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
+import CloseIcon from '@material-ui/icons/Close';
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import {Link} from 'react-router-dom';
+import { Drawer} from '@material-ui/core';
 import './navbar.css';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 // Hook
 function useLocalStorage(key, initialValue) {
@@ -122,9 +125,13 @@ const useStyles = makeStyles((theme) => ({
 
 export default function NavBar() {
 
+  const TabsOrDrawer = useMediaQuery('(min-width:800px)');
+
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+
+  const [isDrawerOpen, setDrawer] = React.useState(false)
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -151,6 +158,10 @@ export default function NavBar() {
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
+
+  const handleDrawer = () => {
+    setDrawer(current => !current)
+  }
 
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
@@ -211,26 +222,43 @@ export default function NavBar() {
 
   return (
     <div className={classes.grow}>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="open drawer"
-          >
-            <MenuIcon />
+      {!TabsOrDrawer ? <Drawer
+        variant="persistent"
+        width={1/4}
+        classes={{
+          paper: classes.drawerPaper,
+        }}
+        open={isDrawerOpen}
+      >
+        <div className={classes.drawerHeader}>
+          <IconButton onClick={handleDrawer}>
+            <CloseIcon />
           </IconButton>
-          <Typography className={classes.title} variant="h6" noWrap>
-            FindTune
-          </Typography>
-
-          <Tabs class="tabs" value={value} onChange={handleChangeTabs}>
+        </div>
+        <div className={classes.drawerInner}>
+            <Tabs orientation="vertical" class="tabs" value={value} onChange={handleChangeTabs}>
                 <Tab label="Home" component={Link} to="/" />
                 <Tab label="Bands" component={Link} to="/bands" />
                 <Tab label="Artists" component={Link} to="/artists" />
             </Tabs>
-
+        </div>
+      </Drawer> : null }
+      <AppBar position="static">
+        <Toolbar>
+          {!TabsOrDrawer ? <IconButton
+            edge="start"
+            className={classes.menuButton}
+            color="inherit"
+            aria-label="open drawer"
+            onClick={handleDrawer}
+          >
+            <MenuIcon />
+          </IconButton> : null}
+          {TabsOrDrawer ? <Tabs class="tabs" value={value} onChange={handleChangeTabs}>
+                <Tab label="Home" component={Link} to="/" />
+                <Tab label="Bands" component={Link} to="/bands" />
+                <Tab label="Artists" component={Link} to="/artists" />
+            </Tabs> : null}
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
