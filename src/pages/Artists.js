@@ -7,12 +7,12 @@ import {makeStyles} from "@material-ui/core/styles";
 
 
 export default function Artists () {
-    const artist = {
+    const artist1 = {
         id: 1,
-        name: "Hugette",
-        surname: "Danet",
+        name: "Arias",
+        surname: "Samantha",
         sexe: "m",
-        age: 11,
+        age: 20,
         location: "Paris",
 
         desc:
@@ -25,13 +25,71 @@ export default function Artists () {
         ],
         img_url: "https://julienthomasfeatures.s3.eu-west-3.amazonaws.com/user.svg"
     }
+
+    const artist2 = {
+        id: 2,
+        name: "Naima",
+        surname: "Snider",
+        sexe: "m",
+        age: 25,
+        location: "Paris",
+
+        desc:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id tortor hendrerit, scelerisque dui nec..... "
+        ,
+        instruments:[
+            "Guitarist",
+            "Saxophonist",
+
+        ],
+        img_url: "https://julienthomasfeatures.s3.eu-west-3.amazonaws.com/user.svg"
+    }
+
+    const artist3 = {
+        id: 3,
+        name: "Dave",
+        surname: "Klein",
+        sexe: "m",
+        age: 32,
+        location: "Madrid",
+
+        desc:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id tortor hendrerit, scelerisque dui nec..... "
+        ,
+        instruments:[
+            "Piccolo",
+            "Saxophonist",
+
+        ],
+        img_url: "https://julienthomasfeatures.s3.eu-west-3.amazonaws.com/user.svg"
+    }
+
+    const artist4 = {
+        id: 4,
+        name: "Maximilian",
+        surname: "Barrow",
+        sexe: "m",
+        age: 45,
+        location: "Antibes",
+
+        desc:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id tortor hendrerit, scelerisque dui nec..... "
+        ,
+        instruments:[
+            "Flutist",
+            "Accordeonist",
+
+        ],
+        img_url: "https://julienthomasfeatures.s3.eu-west-3.amazonaws.com/user.svg"
+    }
+
     return(
         <section className="container mt-4">
             <div className="row">
-                <ArtistCard artist={artist} isFollowed={false} />
-                <ArtistCard artist={artist} isFollowed={true} />
-                <ArtistCard artist={artist} isFollowed={true} />
-                <ArtistCard artist={artist} isFollowed={true} />
+                <ArtistCard artist={artist1} isFollowed={false} />
+                <ArtistCard artist={artist2} isFollowed={true} />
+                <ArtistCard artist={artist3} isFollowed={true} />
+                <ArtistCard artist={artist4} isFollowed={true} />
             </div>
         </section>
     )
@@ -68,8 +126,8 @@ function ArtistCard({artist, isFollowed})
                             </div>
                             <div className="row d-flex justify-content-center pt-1">
                                 <ul className="list-group list-group-flush">
-                                    <li className="list-group-item">Guitar</li>
-                                    <li className="list-group-item">Singer</li>
+                                    <li className="list-group-item">{artist.instruments[0]}</li>
+                                    <li className="list-group-item">{artist.instruments[1]}</li>
                                 </ul>
                             </div>
                         </div>
