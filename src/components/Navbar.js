@@ -225,7 +225,7 @@ export default function NavBar() {
             FindTune
           </Typography>
 
-          <Tabs value={value} onChange={handleChangeTabs}>
+          <Tabs class="tabs" value={value} onChange={handleChangeTabs}>
                 <Tab label="Home" component={Link} to="/" />
                 <Tab label="Bands" component={Link} to="/bands" />
                 <Tab label="Artists" component={Link} to="/artists" />

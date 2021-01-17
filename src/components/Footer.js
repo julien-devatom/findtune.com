@@ -10,13 +10,13 @@ const Footer = () => {
             <h5 className="title">Creators</h5>
             <ul>
               <li className="list-unstyled">
-                <a href="#!">Julien Thomas</a>
+                <a href="https://www.linkedin.com/in/julien-thomas-48b227173/">Julien Thomas</a>
               </li>
               <li className="list-unstyled">
                 <a href="#!">Issa Issa</a>
               </li>
               <li className="list-unstyled">
-                <a href="#!">Hugo Danet</a>
+                <a href="https://www.linkedin.com/in/hugo-danet/">Hugo Danet</a>
               </li>
             </ul>
           </MDBCol>
