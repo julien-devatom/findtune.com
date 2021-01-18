@@ -1,9 +1,6 @@
 import {useForm} from "react-hook-form";
 import {Button} from "@material-ui/core";
-import DateFnsUtils from "@date-io/date-fns";
 import {Alert, Autocomplete} from "@material-ui/lab";
-import {TextField} from "material-ui";
-import {KeyboardDatePicker, MuiPickersUtilsProvider} from "@material-ui/pickers";
 
 export default function RegisterType ({onSubmit, error}) {
     const instruments = [
