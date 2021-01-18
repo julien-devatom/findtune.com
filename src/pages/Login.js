@@ -1,6 +1,7 @@
 import LoginType from "../components/form/LoginType";
 import {useContext, useState} from "react";
 import {UserContext} from "../providers/userProvider";
+import {Redirect} from "react-router-dom";
 
 export const Login = () => {
 
@@ -15,6 +16,7 @@ export const Login = () => {
 
     return(
         <section className="container mt-4 d-flex justify-content-center align-items-center">
+            { user && <Redirect to="/profile" />}
             <div className="card">
                 <div className="card-body">
                     <LoginType onSubmit={onSubmit} error={error}/>

@@ -1,14 +1,11 @@
 import {useForm} from "react-hook-form";
 import {Button} from "@material-ui/core";
 import {Alert} from "@material-ui/lab";
-import {useContext} from "react";
-import {UserContext} from "../../providers/userProvider";
 
 
 export default function LoginType({onSubmit, error}) {
     const {register, handleSubmit, formState, errors} = useForm();
     const {isSubmitting} = formState
-    const addUser = useContext(UserContext)
     return(
     <form onSubmit={handleSubmit(onSubmit)}>
         {error && <Alert severity="error">{error}</Alert>}

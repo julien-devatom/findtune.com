@@ -24,7 +24,7 @@ export default class UserProvider extends Component {
         }
         this.state = {
             user: getUserFromCookies(),
-            addUser: this.adduser,
+            addUser: this.addUser,
             getUserFromCredentials: this.getUserFromCredentials
         };
     }
