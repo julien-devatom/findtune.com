@@ -5,7 +5,6 @@ import {useState} from "react";
 import {Divider, List, ListItem} from "material-ui";
 import {makeStyles} from "@material-ui/core/styles";
 
-
 export default function Artists () {
     const artist1 = {
         id: 1,

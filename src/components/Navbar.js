@@ -21,6 +21,7 @@ import {Link} from 'react-router-dom';
 import { Drawer} from '@material-ui/core';
 import './navbar.css';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { UserContext } from '../providers/userProvider.js'
 
 // Hook
 function useLocalStorage(key, initialValue) {
@@ -125,6 +126,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function NavBar() {
 
+  const {user,logout} = React.useContext(UserContext);
+
   const TabsOrDrawer = useMediaQuery('(min-width:800px)');
 
   const classes = useStyles();
@@ -164,6 +167,7 @@ export default function NavBar() {
   }
 
   const menuId = 'primary-search-account-menu';
+
   const renderMenu = (
     <Menu
       anchorEl={anchorEl}
@@ -174,8 +178,12 @@ export default function NavBar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-        <MenuItem onClick={handleMenuClose}>Log Out</MenuItem>
+      <div>
+      {(user !== null) ? <MenuItem onClick={handleMenuClose}>Profile</MenuItem> : null}
+      {(user !== null) ? <MenuItem onClick={logout}>Log Out</MenuItem> : null}
+      {(user === null) ? <MenuItem onClick={handleMenuClose} component={Link} to="/register">Register</MenuItem> : null}
+      {(user === null) ? <MenuItem onClick={handleMenuClose} component={Link} to="/login">Log In</MenuItem> : null}
+      </div>
     </Menu>
   );
 
@@ -190,6 +198,7 @@ export default function NavBar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
+      {({user} !== null) ?
       <MenuItem>
         <IconButton color="inherit">
           <Badge badgeContent={4} color="secondary">
@@ -197,16 +206,16 @@ export default function NavBar() {
           </Badge>
         </IconButton>
         <p>Messages</p>
-      </MenuItem>
-      <MenuItem>
+      </MenuItem> : null}
+      {({user} !== null) ? <MenuItem>
         <IconButton color="inherit">
           <Badge badgeContent={5} color="secondary">
             <NotificationsIcon />
           </Badge>
         </IconButton>
         <p>Notifications</p>
-      </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
+      </MenuItem> : null}
+     <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
           aria-label="account of current user"
           aria-controls="primary-search-account-menu"
@@ -217,7 +226,7 @@ export default function NavBar() {
         </IconButton>
         <p>Profile</p>
       </MenuItem>
-    </Menu>
+      </Menu>
   );
 
   return (
@@ -274,16 +283,16 @@ export default function NavBar() {
           </div>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            <IconButton aria-label="show 4 new mails" color="inherit">
+            {(user !== null) ? <IconButton aria-label="show 4 new mails" color="inherit">
               <Badge badgeContent={4} color="secondary">
                 <MailIcon />
               </Badge>
-            </IconButton>
-            <IconButton color="inherit" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            </IconButton> : null}
+            {(user !== null) ? <IconButton color="inherit" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <Badge badgeContent={5} color="secondary">
                 <NotificationsIcon />
               </Badge>
-            </IconButton>
+            </IconButton> : null}
         <ul class="dropdown-menu dropdown-menu">
         <li>
           <a href="#" class="top-text-block">
