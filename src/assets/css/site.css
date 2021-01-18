@@ -171,7 +171,7 @@ body{
     Artist card
  */
 .card_artist{
-    border: 2px gray solid;
+    border: 2px lightblue solid !important;
     border-radius: 15px;
     color: gray;
 }
@@ -180,7 +180,7 @@ body{
     text-align: center !important;
 }
 .card_artist_followed{
-    border: 2px #5CB85C solid ;
+    border: 2px #5CB85C solid !important;
 }
 .card_artist:hover{
     transform: translateY(-10px);
