@@ -23,7 +23,7 @@ export default function Artists () {
             "Bass Player",
 
         ],
-        img_url: "https://julienthomasfeatures.s3.eu-west-3.amazonaws.com/user.svg"
+        img_url: "https://cassettefbisurveillancevan.s3.eu-west-3.amazonaws.com/Ellipse-1.svg"
     }
 
     const artist2 = {
@@ -42,7 +42,7 @@ export default function Artists () {
             "Saxophonist",
 
         ],
-        img_url: "https://julienthomasfeatures.s3.eu-west-3.amazonaws.com/user.svg"
+        img_url: "https://cassettefbisurveillancevan.s3.eu-west-3.amazonaws.com/Ellipse-4.svg"
     }
 
     const artist3 = {
@@ -61,7 +61,7 @@ export default function Artists () {
             "Saxophonist",
 
         ],
-        img_url: "https://julienthomasfeatures.s3.eu-west-3.amazonaws.com/user.svg"
+        img_url: "https://cassettefbisurveillancevan.s3.eu-west-3.amazonaws.com/Ellipse-3.svg"
     }
 
     const artist4 = {
