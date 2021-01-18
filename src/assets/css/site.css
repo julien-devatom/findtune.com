@@ -28,7 +28,7 @@ body{
     background: #ECF7FF;
     background: -webkit-linear-gradient(to left, #ECF7FF, #ECF7FF);
     width: 100%;
-    height: 120vh;
+    min-height: 100vh;
 }
 
 .circles{
