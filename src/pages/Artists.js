@@ -109,8 +109,8 @@ function ArtistCard({artist, isFollowed})
     }
 
     return(
-        <div className="col-md-4 col-sm-6 p-2">
-            <div className={follow ? "card card_artist card_artist_followed" : "card card_artist"}>
+        <div className="col-md-4 col-sm-6 p-2 ">
+            <div className={follow ? "card card_artist card_artist_followed shadow" : "card card_artist shadow"} >
                 <div className="card-body">
                     <Switch
                         checked={follow}
