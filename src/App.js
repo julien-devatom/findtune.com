@@ -22,6 +22,8 @@ import "./app.css"
 import 'mdbreact/dist/css/mdb.css'
 import UserProvider from "./providers/userProvider";
 import Logout from "./components/Logout";
+import FlashProvider from "./providers/flashProvider";
+import Flashs from "./components/Flashs";
 
 
 function App() {
@@ -31,6 +33,7 @@ function App() {
 
   return (
       <UserProvider>
+          <FlashProvider>
           <Router>
               <div class="area" >
                 <ul class="circles">
@@ -46,6 +49,7 @@ function App() {
                         <sub></sub>
                 </ul>
               <Navbar />
+              <Flashs />
               <div className="multi-action-button">
                 <MultiActionButton />
               </div>
@@ -81,6 +85,7 @@ function App() {
             </div>
             <Footer />
           </Router>
+          </FlashProvider>
       </UserProvider>
   );
 }
