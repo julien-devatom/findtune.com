@@ -8,8 +8,8 @@
 
 .context {
     width: 100%;
-    position: absolute;
-    top:20vh;
+    height:25vh;
+    padding: 20px;
 }
 
 .context h1{

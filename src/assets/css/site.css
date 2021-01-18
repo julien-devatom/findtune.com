@@ -192,5 +192,10 @@ body{
     border-radius: 15px;
 }
 
+.card_home_post{
+    border: 1px solid lightblue !important;
+    border-radius: 25px;
+}
+
 
 
