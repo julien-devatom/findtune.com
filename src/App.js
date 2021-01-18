@@ -25,7 +25,6 @@ import 'mdbreact/dist/css/mdb.css'
 function App() {
   return (
       <Router>
-        <div>
           <div class="area" >
             <ul class="circles">
                     <sub></sub>
@@ -38,7 +37,8 @@ function App() {
                     <sub></sub>
                     <sub></sub>
                     <sub></sub>
-                    <Navbar />
+            </ul>
+          <Navbar />
           <div className="multi-action-button">
             <MultiActionButton />
           </div>
@@ -68,8 +68,6 @@ function App() {
               <Home />
             </Route>
           </Switch>
-        </ul>
-        </div>
         </div>
         <Footer />
       </Router>

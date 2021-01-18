@@ -73,36 +73,12 @@ export default function Bands () {
             }
         }
 
-        const band4={
-            id:4,
-            name: "Greateful Dead",
-            img_url: "https://julienthomasfeatures.s3.eu-west-3.amazonaws.com/band.svg",
-            artists:{
-                1: {
-                    id:1,
-                    name: "Julien",
-                    img_url: "https://julienthomasfeatures.s3.eu-west-3.amazonaws.com/logo.png"
-                },
-                2: {
-                    id:2,
-                        name: "Hugo",
-                    img_url: "https://julienthomasfeatures.s3.eu-west-3.amazonaws.com/logo.png"
-                },
-                3: {
-                    id:3,
-                    name: "Issa",
-                    img_url: "https://julienthomasfeatures.s3.eu-west-3.amazonaws.com/logo.png"
-                }
-            }
-        }
-
     return(
         <div>
             <section className="container mt-4">
                 <BandCard band={band1} />
                 <BandCard band={band2} />
                 <BandCard band={band3} />
-                <BandCard band={band4} />
             </section>
         </div>
     )
