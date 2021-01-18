@@ -198,7 +198,7 @@ export default function NavBar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      {({user} !== null) ?
+      {(user !== null) ?
       <MenuItem>
         <IconButton color="inherit">
           <Badge badgeContent={4} color="secondary">
@@ -207,7 +207,7 @@ export default function NavBar() {
         </IconButton>
         <p>Messages</p>
       </MenuItem> : null}
-      {({user} !== null) ? <MenuItem>
+      {(user !== null) ? <MenuItem>
         <IconButton color="inherit">
           <Badge badgeContent={5} color="secondary">
             <NotificationsIcon />
