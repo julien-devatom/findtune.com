@@ -1,6 +1,7 @@
 import Header from "../components/Header";
 import {AvatarGroup} from "@material-ui/lab";
 import {Avatar, Button, Tabs} from "@material-ui/core";
+import "./bands.css";
 
 export default function Bands () {
         const band1={
@@ -28,8 +29,8 @@ export default function Bands () {
 
         const band2={
             id:2,
-            name: "No Doubt",
-            img_url: "https://julienthomasfeatures.s3.eu-west-3.amazonaws.com/band.svg",
+            name: "Justice",
+            img_url: "https://static.fnac-static.com/multimedia/Images/FR/NR/b5/98/9b/10197173/1540-1/tsp20180620174207/Woman-Worldwide-Coffret.jpg",
             artists:{
                 1: {
                     id:1,
@@ -52,8 +53,8 @@ export default function Bands () {
 
         const band3={
             id:3,
-            name: "Avenged Sevenfold",
-            img_url: "https://julienthomasfeatures.s3.eu-west-3.amazonaws.com/band.svg",
+            name: "Daft Punk",
+            img_url: "https://images-na.ssl-images-amazon.com/images/I/71s4lMxThwL._SL1300_.jpg",
             artists:{
                 1: {
                     id:1,
@@ -87,14 +88,13 @@ export default function Bands () {
 function BandCard ({band}){
     return (
         <div className="card card_band d-flex my-2" >
-
             <div className="card-body">
                 <div className="row">
                 <div class="col-lg-3 col-md-4">
                     <div className="row d-flex justify-content-center">
                         <img src={band.img_url} className="img-fluid img-thumbnail rounded-circle" />
                     </div>
-                    <div className="row d-flex justify-content-center mb-3">
+                    <div className="row d-flex justify-content-center mb-3 no-hover">
                         <Button variant="contained" color="primary" href={"/band/"+band.id}>
                             See more
                         </Button>
@@ -107,8 +107,6 @@ function BandCard ({band}){
                         auctor ante. Donec ipsum dui, pharetra ut tortor id, mollis vulputate neque. Phasellus sit amet ultrices augue.
                         Morbi commodo ex vitae nisl ornare gravida. Nunc et lectus id nisl malesuada venenatis. Nulla efficitur metus at
                         lacus efficitur, sed lacinia arcu fringilla. Donec accumsan ornare ex nec malesuada. Curabitur ante urna,
-
-
                     </p>
                     <div className="card_band_artists" >
                         <AvatarGroup max={4}>

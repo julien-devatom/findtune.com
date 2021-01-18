@@ -2,6 +2,7 @@ import Header from "../components/Header";
 import React from 'react';
 import { Player } from 'video-react';
 import "video-react/dist/video-react.css"; // import css
+import ReactAudioPlayer from 'react-audio-player';
 
 /**
  * cards.map(card => <CardPost type={card.type} data={card.data})
@@ -18,7 +19,7 @@ export const Home = () => {
             <div className="container">
                 <div className="row">
                     <CardPostVideo />
-                    <CardPost />
+                    <CardPostMusic />
                     <CardPost />
                     <CardPost />
                     <CardPost />
@@ -28,7 +29,7 @@ export const Home = () => {
                     <CardPost />
                     <CardPost />
                     <CardPost />
-                    <CardPost />
+                    <CardPostMusic />
                     <CardPost />
                     <CardPost />
                     <CardPost />
@@ -61,8 +62,22 @@ function CardPostVideo(){
         <div className="col-md-4 col-sm-6 p-2 mb-3 ">
         <div className="card card_home_post" data-aos="fade-up">
             <div className="card-body">
-                Video
                 <Player playsInline poster="/assets/poster.png" src="https://cdn.videvo.net/videvo_files/video/free/2013-12/small_watermarked/CROWD_JUMPS_LIGHTS_PULSE_preview.webm"/>
+            </div>
+            <div className="card-footer">
+            </div>
+        </div>
+    </div>
+    )
+}
+
+
+function CardPostMusic(){
+    return(
+        <div className="col-md-4 col-sm-6 p-2 mb-3 ">
+        <div className="card card_home_post" data-aos="fade-up">
+            <div className="card-body">
+            <ReactAudioPlayer className="w-100" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" controls/>
             </div>
             <div className="card-footer">
             </div>

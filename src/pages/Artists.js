@@ -4,6 +4,7 @@ import AccountCircle from "@material-ui/icons/AccountCircle";
 import {useState} from "react";
 import {Divider, List, ListItem} from "material-ui";
 import {makeStyles} from "@material-ui/core/styles";
+import "./artists.css";
 
 export default function Artists () {
     const artist1 = {
@@ -145,7 +146,7 @@ function ArtistCard({artist, isFollowed})
                             <p>
                                 {artist.desc}
                             </p>
-                            <div className="row d-flex justify-content-end pr-2">
+                            <div className="row d-flex justify-content-end pr-2 no-hover">
                                 <Button variant="contained" color="primary" href={"/artist/"+artist.id}>
                                     See more
                                 </Button>
