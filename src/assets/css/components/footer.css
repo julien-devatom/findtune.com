@@ -1,0 +1,30 @@
+
+/*FOOTER*/
+
+footer {
+    background: #3f51b6;
+    background: linear-gradient(180deg, #3f51b6, rgba(63,81,182,0.8));
+    color: white;
+  }
+  
+  footer a {
+    color: #fff;
+    font-size: 14px;
+    transition-duration: 0.2s;
+  }
+  
+  footer a:hover {
+    color: #FA944B;
+    text-decoration: none;
+  }
+  
+  .copy {
+    font-size: 12px;
+    padding: 10px;
+    border-top: 1px solid #FFFFFF;
+  }
+  
+  .footer-middle {
+    padding-top: 2em;
+    color: white;
+  }

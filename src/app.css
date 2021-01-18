@@ -1,6 +1,6 @@
 .multi-action-button{
     position: fixed;
-    right: 70px;
-    bottom: 55px;
+    right: 100px;
+    bottom: 60px;
     z-index: 9999;
 }

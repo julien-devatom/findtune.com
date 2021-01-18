@@ -17,7 +17,7 @@ export class MultiActionButton extends Component {
   ]
 
   render() {
-    return <FloatingButtons buttonType='plus' degree={360} dimension={50} buttonsList={this.buttonsList}  top={'calc(50% - 25px)'} left={'5%'} direction="up" />
+    return <FloatingButtons buttonType='plus' degree={360} dimension={65} buttonsList={this.buttonsList}  top={'calc(50% - 25px)'} left={'5%'} direction="up" />
   }
 }
 

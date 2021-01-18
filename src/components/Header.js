@@ -3,8 +3,9 @@ import '../assets/css/components/header.css'
 export default function Header ({title}) {
 
     return(
-    <div className="header">
-        <h1>{title}</h1>
-    </div>
+        <div class="context">
+            <h1>FindTune</h1>
+            <h2>Bands make dreams come true</h2>
+        </div>
     )
 }
