@@ -26,7 +26,19 @@ function App() {
   return (
       <Router>
         <div>
-          <Navbar />
+          <div class="area" >
+            <ul class="circles">
+                    <sub></sub>
+                    <sub></sub>
+                    <sub></sub>
+                    <sub></sub>
+                    <sub></sub>
+                    <sub></sub>
+                    <sub></sub>
+                    <sub></sub>
+                    <sub></sub>
+                    <sub></sub>
+                    <Navbar />
           <div className="multi-action-button">
             <MultiActionButton />
           </div>
@@ -56,6 +68,8 @@ function App() {
               <Home />
             </Route>
           </Switch>
+        </ul>
+        </div>
         </div>
         <Footer />
       </Router>

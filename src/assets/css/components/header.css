@@ -1,8 +1,27 @@
-
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
 
 .header{
     width: 100vw;
     height: 100vw;
-    background: url("./wave.svg") top no-repeat;
+}
 
+
+.context {
+    width: 100%;
+    position: absolute;
+    top:20vh;
+}
+
+.context h1{
+    text-align: center;
+    color: #fff;
+    font-size: 70px;
+    font-family: 'Exo', sans-serif;
+}
+
+.context h2{
+    text-align: center;
+    color: #fff;
+    font-size: 40px;
+    font-family: 'Exo', sans-serif;
 }

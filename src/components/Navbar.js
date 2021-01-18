@@ -293,7 +293,7 @@ export default function NavBar() {
         </li>
         <li>
           <a href="#" class="top-text-block">
-            <div class="top-text-heading">New asset recommendations in <b>Electronic Synth ZX3LK</b></div>
+            <div class="top-text-heading">New asset recommendation <b>Electronic Synth ZX3LK</b></div>
             <div class="top-text-light">2 hours ago</div>
           </a> 
         </li>
