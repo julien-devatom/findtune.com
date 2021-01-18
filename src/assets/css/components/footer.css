@@ -2,8 +2,8 @@
 /*FOOTER*/
 
 footer {
-    background: #111cf0;
-    background: linear-gradient(180deg, #111cf0, #5e66ff);
+    background: #3f51b6;
+    background: linear-gradient(180deg, #3f51b6, rgba(63,81,182,0.8));
     color: white;
   }
   
