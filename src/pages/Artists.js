@@ -4,6 +4,7 @@ import AccountCircle from "@material-ui/icons/AccountCircle";
 import {useState} from "react";
 import {Divider, List, ListItem} from "material-ui";
 import {makeStyles} from "@material-ui/core/styles";
+import "./artists.css";
 
 export default function Artists () {
     const artist1 = {
@@ -22,7 +23,7 @@ export default function Artists () {
             "Bass Player",
 
         ],
-        img_url: "https://julienthomasfeatures.s3.eu-west-3.amazonaws.com/user.svg"
+        img_url: "https://cassettefbisurveillancevan.s3.eu-west-3.amazonaws.com/Ellipse-1.svg"
     }
 
     const artist2 = {
@@ -41,7 +42,7 @@ export default function Artists () {
             "Saxophonist",
 
         ],
-        img_url: "https://julienthomasfeatures.s3.eu-west-3.amazonaws.com/user.svg"
+        img_url: "https://cassettefbisurveillancevan.s3.eu-west-3.amazonaws.com/Ellipse-4.svg"
     }
 
     const artist3 = {
@@ -60,7 +61,7 @@ export default function Artists () {
             "Saxophonist",
 
         ],
-        img_url: "https://julienthomasfeatures.s3.eu-west-3.amazonaws.com/user.svg"
+        img_url: "https://cassettefbisurveillancevan.s3.eu-west-3.amazonaws.com/Ellipse-3.svg"
     }
 
     const artist4 = {
@@ -145,7 +146,7 @@ function ArtistCard({artist, isFollowed})
                             <p>
                                 {artist.desc}
                             </p>
-                            <div className="row d-flex justify-content-end pr-2">
+                            <div className="row d-flex justify-content-end pr-2 no-hover">
                                 <Button variant="contained" color="primary" href={"/artist/"+artist.id}>
                                     See more
                                 </Button>
