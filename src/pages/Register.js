@@ -1,20 +1,25 @@
 import RegisterType from "../components/form/RegisterType";
-import { useContext} from "react";
+import {useContext, useState} from "react";
 import {UserContext} from "../providers/userProvider";
-import {Redirect} from "react-router-dom";
+import {Redirect, useHistory} from "react-router-dom";
 
 export const Register = () => {
     const {user, addUser} = useContext(UserContext)
+    const [error, setError] = useState(null)
+    const history = useHistory()
     const handleSubmit = data =>{
-        addUser(data)
-        console.log(user)
+        const _error = addUser(data)
+        setError(_error)
+        if(!_error){
+            history.push("/login")
+        }
     }
     return(
         <div className="container">
             { user && <Redirect to="/profile" />}
             <div className="card">
                 <div className="card-body">
-                    <RegisterType onSubmit={handleSubmit} error={null} />
+                    <RegisterType onSubmit={handleSubmit} error={error} />
                 </div>
             </div>
         </div>

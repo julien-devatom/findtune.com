@@ -2,8 +2,7 @@ import {useForm} from "react-hook-form";
 import {Button} from "@material-ui/core";
 import {Alert} from "@material-ui/lab";
 
-export default function RegisterType ({onSubmit}) {
-    const error = null
+export default function RegisterType ({onSubmit, error}) {
     const {register, handleSubmit, formState, errors} = useForm();
     const {isSubmitting} = formState
     return(

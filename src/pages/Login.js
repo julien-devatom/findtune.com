@@ -10,7 +10,7 @@ export const Login = () => {
     const onSubmit = data => {
         const _user = getUserFromCredentials(data.username, data.password)
         console.log(_user)
-        console.log(user)
+
       setError("invalid credentials")
     }
 

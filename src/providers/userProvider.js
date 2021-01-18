@@ -1,18 +1,27 @@
 import React, {Component, createContext, useMemo} from "react";
-import {createUser, getUserFromCookies, getUserFromCredentials} from "../userManager";
+import {createUser, getUserFromCookies, getUserFromCredentials, logout} from "../userManager";
 
 export const UserContext = createContext({
     user: getUserFromCookies(),
     addUser: () => {},
-    getUserFromCredentials: () => {}
+    getUserFromCredentials: () => {},
+    logout: () => {}
     });
 export default class UserProvider extends Component {
     constructor(props) {
         super(props);
         this.addUser= (_user)=>{
-            createUser(_user);
+            const result = createUser(_user);
+            if(result.success) {
+                return null
+            }else{
+               return result.message
+            }
+        }
+        this.logout=()=>{
+            logout()
             this.setState({
-                user: _user
+                user: null
             })
         }
         this.getUserFromCredentials=(username, password) =>{
@@ -25,7 +34,8 @@ export default class UserProvider extends Component {
         this.state = {
             user: getUserFromCookies(),
             addUser: this.addUser,
-            getUserFromCredentials: this.getUserFromCredentials
+            getUserFromCredentials: this.getUserFromCredentials,
+            logout: this.logout
         };
     }
 

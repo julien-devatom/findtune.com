@@ -21,6 +21,7 @@ import Footer from "./components/Footer"
 import "./app.css"
 import 'mdbreact/dist/css/mdb.css'
 import UserProvider from "./providers/userProvider";
+import Logout from "./components/Logout";
 
 
 function App() {
@@ -70,6 +71,9 @@ function App() {
                 <Route path="/artist/:id">
                   <Artist />
                 </Route>
+                  <Route path="/logout">
+                      <Logout />
+                  </Route>
                 <Route path="/">
                   <Home />
                 </Route>
