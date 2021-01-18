@@ -3,9 +3,9 @@ import React from "react";
 import './assets/app';
 
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route
+    BrowserRouter as Router,
+    Switch,
+    Route, Link
 } from "react-router-dom";
 import {Home} from './pages/Home'
 import Navbar from "./components/Navbar";
@@ -20,57 +20,68 @@ import {MultiActionButton} from "./components/MultiActionButton";
 import Footer from "./components/Footer"
 import "./app.css"
 import 'mdbreact/dist/css/mdb.css'
+import UserProvider from "./providers/userProvider";
+import Logout from "./components/Logout";
 
 
 function App() {
+    const user = {
+        id: 1
+    }
+
   return (
-      <Router>
-          <div class="area" >
-            <ul class="circles">
-                    <sub></sub>
-                    <sub></sub>
-                    <sub></sub>
-                    <sub></sub>
-                    <sub></sub>
-                    <sub></sub>
-                    <sub></sub>
-                    <sub></sub>
-                    <sub></sub>
-                    <sub></sub>
-            </ul>
-          <Navbar />
-          <div className="multi-action-button">
-            <MultiActionButton />
-          </div>
-          <Switch>
-            <Route path="/profile">
-              <Profile />
-            </Route>
-            <Route path="/login">
-              <Login />
-            </Route>
-            <Route path="/register">
-              <Register />
-            </Route>
-            <Route path="/bands">
-              <Bands />
-            </Route>
-            <Route path="/band/:id">
-              <Band />
-            </Route>
-            <Route path="/artists">
-              <Artists/>
-            </Route>
-            <Route path="/artist/:id">
-              <Artist />
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route>
-          </Switch>
-        </div>
-        <Footer />
-      </Router>
+      <UserProvider>
+          <Router>
+              <div class="area" >
+                <ul class="circles">
+                        <sub></sub>
+                        <sub></sub>
+                        <sub></sub>
+                        <sub></sub>
+                        <sub></sub>
+                        <sub></sub>
+                        <sub></sub>
+                        <sub></sub>
+                        <sub></sub>
+                        <sub></sub>
+                </ul>
+              <Navbar />
+              <div className="multi-action-button">
+                <MultiActionButton />
+              </div>
+              <Switch>
+                <Route path="/profile">
+                    {user ? <Profile /> : <Link to="/login" />}
+                </Route>
+                <Route path="/login">
+                  <Login />
+                </Route>
+                <Route path="/register">
+                  <Register />
+                </Route>
+                <Route path="/bands">
+                  <Bands />
+                </Route>
+                <Route path="/band/:id">
+                  <Band />
+                </Route>
+                <Route path="/artists">
+                  <Artists/>
+                </Route>
+                <Route path="/artist/:id">
+                  <Artist />
+                </Route>
+                  <Route path="/logout">
+                      <Logout />
+                  </Route>
+                <Route path="/">
+                  <Home />
+                </Route>
+              </Switch>
+            </div>
+            <Footer />
+          </Router>
+      </UserProvider>
   );
 }
 

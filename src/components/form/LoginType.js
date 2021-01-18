@@ -1,17 +1,14 @@
 import {useForm} from "react-hook-form";
 import {Button} from "@material-ui/core";
+import {Alert} from "@material-ui/lab";
 
 
-export default function LoginType() {
+export default function LoginType({onSubmit, error}) {
     const {register, handleSubmit, formState, errors} = useForm();
     const {isSubmitting} = formState
-    const onSubmit = data => {
-    console.log(data)
-    }
-
-    console.log(errors)
     return(
     <form onSubmit={handleSubmit(onSubmit)}>
+        {error && <Alert severity="error">{error}</Alert>}
         <div className="row">
             <div className="form-group">
                 <label htmlFor="username">Username</label>
