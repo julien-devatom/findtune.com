@@ -33,7 +33,7 @@ export const Register = () => {
                 </div>
                 <div className="card-body">
                     <RegisterType onSubmit={handleSubmit} error={error} />
-                    <Divider variant="middle" />
+
                     <div className="row">
                     </div>
                 </div>

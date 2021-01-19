@@ -1,6 +1,6 @@
 import {useForm} from "react-hook-form";
 import {Button} from "@material-ui/core";
-import {Alert, Autocomplete} from "@material-ui/lab";
+import {Alert} from "@material-ui/lab";
 
 export default function RegisterType ({onSubmit, error}) {
     const instruments = [
