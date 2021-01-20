@@ -1,3 +1,8 @@
 .no-hover a:hover{
-    color: white;
+    color: white !important;
+    display: block !important;
+}
+
+.no-hover a{
+    color: white !important;
 }
