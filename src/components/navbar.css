@@ -65,6 +65,6 @@
   }
 }
 
-.tabs a:hover {
+.tabs a:focus, .tabs a:hover {
   color: white;
 }
