@@ -11,4 +11,5 @@ import './css/site.css'
 import './css/components/header.css'
 
 import AOS from 'aos'
-AOS.init();
+
+AOS.init()
