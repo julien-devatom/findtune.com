@@ -6,7 +6,7 @@ const INITIALS_POSTS=[
         type: 'message',
         createdBy: 1,
         createdAt: (new Date()).toString(),
-        message: "I really enjoyed myself at Eminem's concert on facebook, it's sure that it wasn't real concerts, but it feels so good at the moment",
+        message: "I really enjoyed myself at Eminem's concert on facebook, it's sure that it wasn't real concerts, but it feels so good at the moment.",
         likes: 23,
         liked: true
     },
@@ -16,7 +16,7 @@ const INITIALS_POSTS=[
         music_url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
         createdBy: 1,
         createdAt: (new Date()).toString(),
-        message: "After composing all night in my room, this is what I managed to produce. Enjoy!",
+        message: "After composing all night in my room, this is what I managed to produce. Enjoy !",
         likes: 23,
         liked: true
     },
@@ -26,7 +26,7 @@ const INITIALS_POSTS=[
         video_url: "https://cdn.videvo.net/videvo_files/video/free/2013-12/small_watermarked/CROWD_JUMPS_LIGHTS_PULSE_preview.webm",
         createdBy: 1,
         createdAt: (new Date()).toString(),
-        message: "So many good memories of these concerts, quickly that it resumes!",
+        message: "So many good memories of these concerts, quickly that it resumes !",
         likes: 1264,
         liked: true
     },
@@ -34,7 +34,7 @@ const INITIALS_POSTS=[
         type: 'message',
         createdBy: 1,
         createdAt: (new Date()).toString(),
-        message: 'What do you think of rap in 2020? Has it become old-fashioned or does it still free up speech?',
+        message: 'What do you think of rap in 2020? Has it become old-fashioned or does it still free up speech ?',
         likes: 12,
         liked: true
     }
