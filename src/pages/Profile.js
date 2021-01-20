@@ -6,6 +6,15 @@ import PostModal from "../components/modals/PostModal";
 import PostType from "../components/form/PostType";
 import BandType from "../components/form/BandType";
 
+
+/**
+ * This is the profile page, which is accessible
+ * only if you're connected.
+ *
+ * You can create a new band, create a post, or edit your profile (#TODO)
+ * @returns {JSX.Element}
+ * @constructor
+ */
 export default function Profile (){
 
     const {user} = useContext(UserContext)

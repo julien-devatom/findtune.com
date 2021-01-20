@@ -6,7 +6,12 @@ export const FlashContext = createContext({
     push: () => {},
     removeFlash: () => {}
 });
-export default class FlashProvider extends Component {
+
+/**
+ * This class is a provider to create flash messages.
+ * Not implemented yet.
+ */
+export class FlashProvider extends Component {
     constructor(props) {
         super(props);
         this.push = (_flash) => {

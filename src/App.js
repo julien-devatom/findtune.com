@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, {useEffect} from "react";
 import './assets/app';
 
 import {
@@ -30,13 +30,16 @@ function App() {
     const user = {
         id: 1
     }
+    useEffect(() =>{
+        console.log('The project is open source : https://github.com/korrigans84/findtune.com')
+    })
 
   return (
       <UserProvider>
           <FlashProvider>
           <Router>
-              <div class="area" >
-                <ul class="circles">
+              <div className="area" >
+                <ul className="circles">
                         <sub></sub>
                         <sub></sub>
                         <sub></sub>

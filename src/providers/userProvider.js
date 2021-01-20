@@ -1,12 +1,20 @@
-import React, {Component, createContext, useMemo} from "react";
+import React, {Component, createContext} from "react";
 import {createUser, getUserFromCookies, getUserFromCredentials, logout} from "../userManager";
 
+/**
+ *
+ * @type {React.Context<{logout: logout, addUser: UserProvider.addUser, getUserFromCredentials: getUserFromCredentials, user: *}>}
+ */
 export const UserContext = createContext({
     user: getUserFromCookies(),
     addUser: () => {},
     getUserFromCredentials: () => {},
     logout: () => {}
     });
+
+/**
+ * This is a UserProvider, to have access to the user everywhere in the code.
+ */
 export default class UserProvider extends Component {
     constructor(props) {
         super(props);

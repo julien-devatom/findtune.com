@@ -2,6 +2,11 @@ import { Button,Switch } from "@material-ui/core";
 import {useState} from "react";
 import "./artists.css";
 
+/**
+ * This is the artist page, which shows you all the artists of findtunne
+ * @returns {JSX.Element}
+ * @constructor
+ */
 export default function Artists () {
     const artist1 = {
         id: 1,

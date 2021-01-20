@@ -3,6 +3,12 @@ import {AvatarGroup} from "@material-ui/lab";
 import {Avatar, Button, Tabs} from "@material-ui/core";
 import "./bands.css";
 
+/**
+ * This is the bands page, which list all the bands registered on the website
+ * You can add your own through your profile page
+ * @returns {JSX.Element}
+ * @constructor
+ */
 export default function Bands () {
         const band1={
             id:1,

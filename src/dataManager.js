@@ -1,5 +1,6 @@
-
-
+/**
+ * This is an array of fake data to show you the differents features of the website.
+ */
 const INITIALS_POSTS=[
     {
         id: 1,
@@ -52,6 +53,7 @@ const GALLERY = [
     'https://cassettefbisurveillancevan.s3.eu-west-3.amazonaws.com/band.svg',
 
 ]
+
 export function getPosts(){
     const postsFromLocalStorage = JSON.parse(localStorage.getItem('posts'))
     if(!postsFromLocalStorage){
@@ -70,6 +72,13 @@ export function getUsers() {
     }
 }
 export function getUserById(id){
+    const users = localStorage.getItem('users')
+    if(!users){
+        return null
+    }
+    let _user = users.map(user => {if(user.id === id){return user}})
+
+    //return _user[0]
     const user = {
         id: 1,
         username: 'Julien'

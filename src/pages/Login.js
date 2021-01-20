@@ -4,15 +4,23 @@ import {UserContext} from "../providers/userProvider";
 import {Redirect, useHistory} from "react-router-dom";
 import {Button} from "@material-ui/core";
 
+/**
+ * Login page :
+ * It uses the LoginType form component, and handle the submit.
+ * It detect if the credentials are valid or not,
+ * throw an error to the form or redirect the user to this profile page
+ * @returns {JSX.Element}
+ * @constructor
+ */
 export const Login = () => {
     const history = useHistory()
     const [error, setError] = useState(null)
     const {user, getUserFromCredentials} = useContext(UserContext)
     const onSubmit = data => {
         const _user = getUserFromCredentials(data.username, data.password)
-        console.log(_user)
-
-      setError("invalid credentials")
+        if(!_user){
+            setError("Invalid credentials")
+        }
     }
 
     return(

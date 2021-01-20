@@ -1,5 +1,12 @@
 import Header from "../components/Header";
 
+
+/**
+ * This is the band page
+ * #TODO : design this page
+ * @returns {JSX.Element}
+ * @constructor
+ */
 export default function Band () {
     const band={
         id:1,

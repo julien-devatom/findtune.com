@@ -11,9 +11,12 @@ import {UserContext} from "../providers/userProvider";
 import {Link} from "react-router-dom";
 
 /**
- * cards.map(card => <CardPost type={card.type} data={card.data})
+ * This is the home page function.
+ * This page shows you the activity of users,
+ * and provide you to create a post if you're connected.
+ * @returns {JSX.Element}
+ * @constructor
  */
-
 export const Home = () => {
     const {user} = useContext(UserContext)
     const {posts, fetchPosts} = usePosts()
