@@ -3,6 +3,8 @@ import React from 'react';
 import { Player } from 'video-react';
 import "video-react/dist/video-react.css"; // import css
 import ReactAudioPlayer from 'react-audio-player';
+import {usePosts} from "../hooks/usePosts";
+import HomeTimeline from "../components/HomeTimeline";
 
 /**
  * cards.map(card => <CardPost type={card.type} data={card.data})
@@ -14,9 +16,15 @@ import ReactAudioPlayer from 'react-audio-player';
  * @constructor
  */
 export const Home = () => {
+    const {posts, fetchPosts} = usePosts()
+
+
     return(<>
             <Header />
-            <div className="container">
+            <section className="container">
+                <HomeTimeline posts={posts} />
+            </section>
+            <section className="container">
                 <div className="row">
                     <CardPostVideo />
                     <CardPostMusic />
@@ -37,7 +45,7 @@ export const Home = () => {
                     <CardPost />
                     <CardPost />
                 </div>
-            </div>
+            </section>
         </>
     )
 }

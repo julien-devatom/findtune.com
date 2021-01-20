@@ -197,5 +197,14 @@ body{
     border-radius: 25px;
 }
 
+/**
+Home timeline responsive aspect
+ */
+@media screen and (max-width: 600px) {
+
+    .MuiTimelineItem-oppositeContent{
+        display: none;
+    }
+}
 
 
