@@ -8,8 +8,8 @@ import {Rating} from "@material-ui/lab";
 export default function Artist () {
     const artist = {
         id: 1,
-        name: "Hugette",
-        surname: "Danet",
+        name: "Name",
+        surname: "Surname",
         sexe: "f",
         age: 21,
         location: "Paris",
