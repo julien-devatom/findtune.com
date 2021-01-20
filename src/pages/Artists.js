@@ -1,9 +1,5 @@
-import {Avatar, Button, Icon, ListItemIcon, ListItemText, Switch} from "@material-ui/core";
-import {AvatarGroup} from "@material-ui/lab";
-import AccountCircle from "@material-ui/icons/AccountCircle";
+import { Button,Switch } from "@material-ui/core";
 import {useState} from "react";
-import {Divider, List, ListItem} from "material-ui";
-import {makeStyles} from "@material-ui/core/styles";
 import "./artists.css";
 
 export default function Artists () {
@@ -110,8 +106,8 @@ function ArtistCard({artist, isFollowed})
     }
 
     return(
-        <div className="col-md-4 col-sm-6 p-2">
-            <div className={follow ? "card card_artist card_artist_followed" : "card card_artist"}>
+        <div className="col-md-4 col-sm-6 p-2 ">
+            <div className={follow ? "card card_artist card_artist_followed shadow" : "card card_artist shadow"} >
                 <div className="card-body">
                     <Switch
                         checked={follow}

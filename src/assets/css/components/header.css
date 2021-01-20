@@ -8,7 +8,7 @@
 
 .context {
     width: 100%;
-    height:25vh;
+    min-height:25vh;
     padding: 20px;
 }
 

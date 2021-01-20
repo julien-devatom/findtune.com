@@ -20,6 +20,10 @@ body{
     padding: 0px;
 }
 
+a{
+    color: inherit !important;/* Remove blue color for links */
+}
+
 /**
     Background animation
  */
@@ -28,6 +32,7 @@ body{
     background: #ECF7FF;
     background: -webkit-linear-gradient(to left, #ECF7FF, #ECF7FF);
     width: 100%;
+    height: 100%;
     min-height: 100vh;
 }
 
@@ -171,7 +176,7 @@ body{
     Artist card
  */
 .card_artist{
-    border: 2px gray solid;
+    border: 2px lightblue solid !important;
     border-radius: 15px;
     color: gray;
 }
@@ -180,7 +185,7 @@ body{
     text-align: center !important;
 }
 .card_artist_followed{
-    border: 2px #5CB85C solid ;
+    border: 2px #5CB85C solid !important;
 }
 .card_artist:hover{
     transform: translateY(-10px);
@@ -197,5 +202,18 @@ body{
     border-radius: 25px;
 }
 
+.img-galery{
+    max-width: 90px !important;
+}
+
+/**
+Home timeline responsive aspect
+ */
+@media screen and (max-width: 600px) {
+
+    .MuiTimelineItem-oppositeContent{
+        display: none;
+    }
+}
 
 

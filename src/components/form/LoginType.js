@@ -10,14 +10,14 @@ export default function LoginType({onSubmit, error}) {
     <form onSubmit={handleSubmit(onSubmit)}>
         {error && <Alert severity="error">{error}</Alert>}
         <div className="row">
-            <div className="form-group">
+            <div className="form-group col-12">
                 <label htmlFor="username">Username</label>
                 <input className={errors.username ? "form-control is-invalid" : "form-control"} type="text" id="username" ref={register({required: 'Username is required'})} name="username"/>
                 {errors.username && <span className="invalid-feedback">{errors.username.message}</span>}
             </div>
         </div>
         <div className="row">
-            <div className="form-group">
+            <div className="form-group col-12">
                 <label htmlFor="password">Password</label>
                 <input className="form-control" type="password" id="password" ref={register({required: 'password is required'})} name="password"/>
             </div>
