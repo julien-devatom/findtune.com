@@ -14,6 +14,10 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import {KeyboardIcon} from "@material-ui/pickers/_shared/icons/KeyboardIcon";
 import {useMediaQuery} from "@material-ui/core";
+import {getPosts, getUserById} from "../dataManager";
+import {MusicNote, Videocam} from "@material-ui/icons";
+import ReactAudioPlayer from "react-audio-player";
+import {Player} from "video-react";
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -24,21 +28,14 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function HomeTimeline(posts) {
-    const post = {
-        type: 'message',
-        createdBy: 1,
-        createdAt: (new Date()).toISOString(),
-        message: 'zqdazd qdzd azedzqd zqd qzd qzd qz',
-        likes: 12,
-        liked: true
-    }
+export default function HomeTimeline() {
+    const posts = getPosts()
 
     const lg = useMediaQuery('(min-width:600px)')
     const classes = useStyles();
     return (
         <Timeline align={lg ? 'alternate' : 'left'}>
-            <HomeItem post={post} />
+            {posts.map(post => <HomeItem post={post} />)}
             <TimelineItem>
                 <TimelineOppositeContent>
                     <Typography variant="body2" color="textSecondary">
@@ -100,15 +97,16 @@ function HomeItem({post}){
     switch (post.type){
         case 'message':
             return(<HomeItemMessage post={post} />)
+        case 'music':
+            return(<HomeItemMusic post={post} />)
+        case 'video':
+            return(<HomeItemVideo post={post} />)
         default:
             return(<HomeItemMessage post={post} />)
     }
 }
 function HomeItemMessage({post}){
-    const user = {
-        id: 1,
-        username: 'Julien'
-    }
+    const user = getUserById(post.createdBy)
     const classes = useStyles();
     return(
         <TimelineItem>
@@ -129,6 +127,71 @@ function HomeItemMessage({post}){
                         {user.username}
                     </Typography>
                     <Typography>{post.message}</Typography>
+                    <Typography><i className="fa fa-heart"></i> {post.likes} </Typography>
+                </Paper>
+            </TimelineContent>
+        </TimelineItem>
+    )
+}
+
+function HomeItemMusic({post}){
+    const classes = useStyles();
+    const user = getUserById(post.createdBy)
+    return(
+        <TimelineItem>
+            <TimelineOppositeContent>
+                <Typography variant="body2" color="textSecondary">
+                    {post.createdAt}
+                </Typography>
+            </TimelineOppositeContent>
+            <TimelineSeparator>
+                <TimelineDot color="primary">
+                    <MusicNote />
+                </TimelineDot>
+                <TimelineConnector />
+            </TimelineSeparator>
+            <TimelineContent>
+                <Paper elevation={3} className={classes.paper}>
+                    <Typography variant="h6" component="h1">
+                        {user.username}
+                    </Typography>
+                    <Typography>
+                        {post.message}
+                        <ReactAudioPlayer className="w-100" src={post.music_url} controls/>
+                    </Typography>
+                    <Typography><i className="fa fa-heart"></i> {post.likes} </Typography>
+                </Paper>
+            </TimelineContent>
+        </TimelineItem>
+    )
+}
+function HomeItemVideo({post}){
+    const classes = useStyles();
+    const user = getUserById(post.createdBy)
+    return(
+        <TimelineItem>
+            <TimelineOppositeContent>
+                <Typography variant="body2" color="textSecondary">
+                    {post.createdAt}
+                </Typography>
+            </TimelineOppositeContent>
+            <TimelineSeparator>
+                <TimelineDot color="outlinedPrimary">
+                    <Videocam />
+                </TimelineDot>
+                <TimelineConnector />
+            </TimelineSeparator>
+            <TimelineContent>
+                <Paper elevation={3} className={classes.paper}>
+                    <Typography variant="h6" component="h1">
+                        {user.username}
+                    </Typography>
+                    <Typography>
+                        {post.message}
+                        <div className="rounded overflow-hidden pb-3">
+                            <Player playsInline  src={post.video_url}/>
+                        </div>
+                    </Typography>
                     <Typography><i className="fa fa-heart"></i> {post.likes} </Typography>
                 </Paper>
             </TimelineContent>
