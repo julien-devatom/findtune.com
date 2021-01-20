@@ -7,17 +7,14 @@ import TimelineConnector from '@material-ui/lab/TimelineConnector';
 import TimelineContent from '@material-ui/lab/TimelineContent';
 import TimelineOppositeContent from '@material-ui/lab/TimelineOppositeContent';
 import TimelineDot from '@material-ui/lab/TimelineDot';
-import LaptopMacIcon from '@material-ui/icons/LaptopMac';
-import HotelIcon from '@material-ui/icons/Hotel';
-import RepeatIcon from '@material-ui/icons/Repeat';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-import {KeyboardIcon} from "@material-ui/pickers/_shared/icons/KeyboardIcon";
 import {useMediaQuery} from "@material-ui/core";
-import {getPosts, getUserById} from "../dataManager";
-import {MusicNote, Videocam} from "@material-ui/icons";
+import { getUserById} from "../dataManager";
+import {Message, MusicNote, Videocam} from "@material-ui/icons";
 import ReactAudioPlayer from "react-audio-player";
 import {Player} from "video-react";
+import {Link} from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -28,67 +25,16 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function HomeTimeline() {
-    const posts = getPosts()
-
+export default function HomeTimeline({posts}) {
     const lg = useMediaQuery('(min-width:600px)')
-    const classes = useStyles();
+    if(!posts){
+        return(<></>)
+    }
     return (
-        <Timeline align={lg ? 'alternate' : 'left'}>
-            {posts.map(post => <HomeItem post={post} />)}
-            <TimelineItem>
-                <TimelineOppositeContent>
-                    <Typography variant="body2" color="textSecondary">
-                        10:00 am
-                    </Typography>
-                </TimelineOppositeContent>
-                <TimelineSeparator>
-                    <TimelineDot color="primary">
-                        <LaptopMacIcon />
-                    </TimelineDot>
-                    <TimelineConnector />
-                </TimelineSeparator>
-                <TimelineContent>
-                    <Paper elevation={3} className={classes.paper}>
-                        <Typography variant="h6" component="h1">
-                            Code
-                        </Typography>
-                        <Typography>Because it&apos;s awesome!</Typography>
-                    </Paper>
-                </TimelineContent>
-            </TimelineItem>
-            <TimelineItem>
-                <TimelineSeparator>
-                    <TimelineDot color="primary" variant="outlined">
-                        <HotelIcon />
-                    </TimelineDot>
-                    <TimelineConnector className={classes.secondaryTail} />
-                </TimelineSeparator>
-                <TimelineContent>
-                    <Paper elevation={3} className={classes.paper}>
-                        <Typography variant="h6" component="h1">
-                            Sleep
-                        </Typography>
-                        <Typography>Because you need rest</Typography>
-                    </Paper>
-                </TimelineContent>
-            </TimelineItem>
-            <TimelineItem>
-                <TimelineSeparator>
-                    <TimelineDot color="secondary">
-                        <RepeatIcon />
-                    </TimelineDot>
-                </TimelineSeparator>
-                <TimelineContent>
-                    <Paper elevation={3} className={classes.paper}>
-                        <Typography variant="h6" component="h1">
-                            Repeat
-                        </Typography>
-                        <Typography>Because this is the life you love!</Typography>
-                    </Paper>
-                </TimelineContent>
-            </TimelineItem>
-        </Timeline>
+            <Timeline align={lg ? 'alternate' : 'left'}>
+                {posts.map(post => <HomeItem key={post.id} post={post}/>)}
+            </Timeline>
+
     );
 }
 
@@ -109,7 +55,7 @@ function HomeItemMessage({post}){
     const user = getUserById(post.createdBy)
     const classes = useStyles();
     return(
-        <TimelineItem>
+        <TimelineItem data-aos="fade-up">
             <TimelineOppositeContent>
                 <Typography variant="body2" color="textSecondary">
                     {post.createdAt}
@@ -117,14 +63,16 @@ function HomeItemMessage({post}){
             </TimelineOppositeContent>
             <TimelineSeparator>
                 <TimelineDot>
-                    <KeyboardIcon />
+                    <Link to={"/post/"+post.id}>
+                    <Message />
+                    </Link>
                 </TimelineDot>
                 <TimelineConnector />
             </TimelineSeparator>
             <TimelineContent>
                 <Paper elevation={3} className={classes.paper}>
                     <Typography variant="h6" component="h1">
-                        {user.username}
+                        <Link to={"/artist/"+user.id}> {user.username} </Link>
                     </Typography>
                     <Typography>{post.message}</Typography>
                     <Typography><i className="fa fa-heart"></i> {post.likes} </Typography>
@@ -138,7 +86,7 @@ function HomeItemMusic({post}){
     const classes = useStyles();
     const user = getUserById(post.createdBy)
     return(
-        <TimelineItem>
+        <TimelineItem data-aos="fade-up">
             <TimelineOppositeContent>
                 <Typography variant="body2" color="textSecondary">
                     {post.createdAt}
@@ -146,14 +94,16 @@ function HomeItemMusic({post}){
             </TimelineOppositeContent>
             <TimelineSeparator>
                 <TimelineDot color="primary">
+                    <Link to={"/post/"+post.id}>
                     <MusicNote />
+                    </Link>
                 </TimelineDot>
                 <TimelineConnector />
             </TimelineSeparator>
             <TimelineContent>
                 <Paper elevation={3} className={classes.paper}>
                     <Typography variant="h6" component="h1">
-                        {user.username}
+                        <Link to={"/artist/"+user.id}> {user.username} </Link>
                     </Typography>
                     <Typography>
                         {post.message}
@@ -169,22 +119,24 @@ function HomeItemVideo({post}){
     const classes = useStyles();
     const user = getUserById(post.createdBy)
     return(
-        <TimelineItem>
+        <TimelineItem data-aos="fade-up">
             <TimelineOppositeContent>
                 <Typography variant="body2" color="textSecondary">
                     {post.createdAt}
                 </Typography>
             </TimelineOppositeContent>
             <TimelineSeparator>
-                <TimelineDot color="outlinedPrimary">
+                <TimelineDot color="primary" variant="outlined">
+                    <Link to={"/post/"+post.id}>
                     <Videocam />
+                    </Link>
                 </TimelineDot>
                 <TimelineConnector />
             </TimelineSeparator>
             <TimelineContent>
                 <Paper elevation={3} className={classes.paper}>
                     <Typography variant="h6" component="h1">
-                        {user.username}
+                        <Link to={"/artist/"+user.id}> {user.username} </Link>
                     </Typography>
                     <Typography>
                         {post.message}

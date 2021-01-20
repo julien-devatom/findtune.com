@@ -1,49 +1,64 @@
 import Header from "../components/Header";
-import React from 'react';
+import React, {useContext, useEffect} from 'react';
 import { Player } from 'video-react';
 import "video-react/dist/video-react.css"; // import css
 import ReactAudioPlayer from 'react-audio-player';
 import {usePosts} from "../hooks/usePosts";
 import HomeTimeline from "../components/HomeTimeline";
+import {Skeleton} from "@material-ui/lab";
+import PostType from "../components/form/PostType";
+import {UserContext} from "../providers/userProvider";
+import {Link} from "react-router-dom";
 
 /**
  * cards.map(card => <CardPost type={card.type} data={card.data})
  */
 
-/**
- *
- * @returns {JSX.Element}
- * @constructor
- */
 export const Home = () => {
+    const {user} = useContext(UserContext)
     const {posts, fetchPosts} = usePosts()
-
+    useEffect(() => {
+        fetchPosts()
+    }, [])
 
     return(<>
             <Header />
+            {
             <section className="container">
-                <HomeTimeline posts={posts} />
+                <div className="row d-flex justify-content-center">
+                    <div className="col-md-8">
+                        {user ?
+                            <div className="card">
+                                <div className="card-header bg-white">
+                                    <h3 className="text-primary">Write a post</h3>
+                                </div>
+                                <div className="card-body">
+                                    <PostType/>
+                                </div>
+                            </div>
+                            :
+                            <div className="card">
+                                <div className="card-body d-flex justify-content-center">
+                                    <Link to="/login"> Sign in to write a post </Link>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </section>
+            }
+            <section className="container">
+                {
+                    posts  ? <HomeTimeline posts={posts} />
+                    : <Skeleton variant="pulse" width={"100%"} height={70} className="d-flex align-items-center justify-content-center">
+                        <h3 className="text-primary">Loading</h3>
+                            <Skeleton variant="pulse" width={"100%"} height={30} />
+                            <Skeleton variant="pulse" width={"100%"} height={30} />
+                        </Skeleton>
+                }
             </section>
             <section className="container">
                 <div className="row">
-                    <CardPostVideo />
-                    <CardPostMusic />
-                    <CardPost />
-                    <CardPost />
-                    <CardPost />
-                    <CardPost />
-                    <CardPost />
-                    <CardPostVideo />
-                    <CardPost />
-                    <CardPost />
-                    <CardPost />
-                    <CardPostMusic />
-                    <CardPost />
-                    <CardPost />
-                    <CardPost />
-                    <CardPost />
-                    <CardPost />
-                    <CardPost />
                 </div>
             </section>
         </>

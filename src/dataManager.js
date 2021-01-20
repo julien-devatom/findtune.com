@@ -6,7 +6,7 @@ const INITIALS_POSTS=[
         type: 'message',
         createdBy: 1,
         createdAt: (new Date()).toString(),
-        message: "sfsrf ef zef zqeffezfs se",
+        message: "I really enjoyed myself at Eminem's concert on facebook, it's sure that it wasn't real concerts, but it feels so good at the moment",
         likes: 23,
         liked: true
     },
@@ -16,7 +16,7 @@ const INITIALS_POSTS=[
         music_url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
         createdBy: 1,
         createdAt: (new Date()).toString(),
-        message: "sfsrf ef zef zqeffezfs se",
+        message: "After composing all night in my room, this is what I managed to produce. Enjoy!",
         likes: 23,
         liked: true
     },
@@ -26,27 +26,48 @@ const INITIALS_POSTS=[
         video_url: "https://cdn.videvo.net/videvo_files/video/free/2013-12/small_watermarked/CROWD_JUMPS_LIGHTS_PULSE_preview.webm",
         createdBy: 1,
         createdAt: (new Date()).toString(),
-        message: "sfsrf ef zef zqeffezfs se",
-        likes: 29,
+        message: "So many good memories of these concerts, quickly that it resumes!",
+        likes: 1264,
         liked: true
     },
     {
         type: 'message',
         createdBy: 1,
         createdAt: (new Date()).toString(),
-        message: 'zqdazd qdzd azedzqd zqd qzd qzd qz',
+        message: 'What do you think of rap in 2020? Has it become old-fashioned or does it still free up speech?',
         likes: 12,
         liked: true
     }
 ]
 
+/**
+ * Contain all the image URL for the website. Import of images is not already implemented
+ * @type {*[]}
+ */
+const GALLERY = [
+    'https://cassettefbisurveillancevan.s3.eu-west-3.amazonaws.com/band.svg',
+    'https://cassettefbisurveillancevan.s3.eu-west-3.amazonaws.com/Ellipse-1.svg',
+    'https://cassettefbisurveillancevan.s3.eu-west-3.amazonaws.com/Ellipse-3.svg',
+    'https://cassettefbisurveillancevan.s3.eu-west-3.amazonaws.com/Ellipse-4.svg',
+    'https://cassettefbisurveillancevan.s3.eu-west-3.amazonaws.com/band.svg',
+
+]
 export function getPosts(){
     const postsFromLocalStorage = JSON.parse(localStorage.getItem('posts'))
     if(!postsFromLocalStorage){
         return INITIALS_POSTS
     }
     return postsFromLocalStorage
+}
 
+export function getUsers() {
+    const users = JSON.parse(localStorage.getItem('users'))
+    if(users){
+        return users
+    }
+    else{
+        return []
+    }
 }
 export function getUserById(id){
     const user = {
@@ -54,4 +75,9 @@ export function getUserById(id){
         username: 'Julien'
     }
     return user
+}
+
+
+export function getImagesGaleryUrl() {
+    return GALLERY;
 }
