@@ -3,7 +3,6 @@ import {useContext, useState} from "react";
 import {UserContext} from "../providers/userProvider";
 import {Redirect, useHistory} from "react-router-dom";
 import {FlashContext} from "../providers/flashProvider";
-import {Divider} from "material-ui";
 export const Register = () => {
     const {user, addUser} = useContext(UserContext)
     const {push} = useContext(FlashContext)
