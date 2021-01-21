@@ -244,7 +244,7 @@ export default function NavBar() {
           </IconButton>
         </div>
         <div className={classes.drawerInner}>
-            <Tabs orientation="vertical" class="tabs" value={value} onChange={handleChangeTabs}>
+            <Tabs orientation="vertical" className="tabs" value={value} onChange={handleChangeTabs}>
                 <Tab label="Home" component={Link} to="/" />
                 <Tab label="Bands" component={Link} to="/bands" />
                 <Tab label="Artists" component={Link} to="/artists" />
@@ -262,7 +262,7 @@ export default function NavBar() {
           >
             <MenuIcon />
           </IconButton> : null}
-          {TabsOrDrawer ? <Tabs class="tabs" value={value} onChange={handleChangeTabs}>
+          {TabsOrDrawer ? <Tabs className="tabs" value={value} onChange={handleChangeTabs}>
                 <Tab label="Home" component={Link} to="/" />
                 <Tab label="Bands" component={Link} to="/bands" />
                 <Tab label="Artists" component={Link} to="/artists" />
@@ -292,39 +292,39 @@ export default function NavBar() {
                 <NotificationsIcon />
               </Badge>
             </IconButton> : null}
-        <ul class="dropdown-menu dropdown-menu">
+        <ul className="dropdown-menu dropdown-menu">
         <li>
-          <a href="#" class="top-text-block">
-            <div class="top-text-heading">You have <b>3 new themes</b> trending</div>
-            <div class="top-text-light">15 minutes ago</div>
+          <a href="#" className="top-text-block">
+            <div className="top-text-heading">You have <b>3 new themes</b> trending</div>
+            <div className="top-text-light">15 minutes ago</div>
           </a> 
         </li>
         <li>
-          <a href="#" class="top-text-block">
-            <div class="top-text-heading">New asset recommendation <b>Electronic Synth ZX3LK</b></div>
-            <div class="top-text-light">2 hours ago</div>
+          <a href="#" className="top-text-block">
+            <div className="top-text-heading">New asset recommendation <b>Electronic Synth ZX3LK</b></div>
+            <div className="top-text-light">2 hours ago</div>
           </a> 
         </li>
         <li>
-          <a href="#" class="top-text-block">
-            <div class="top-text-heading">New friends recommendations</div>
-            <div class="top-text-light">4 hours ago</div>
+          <a href="#" className="top-text-block">
+            <div className="top-text-heading">New friends recommendations</div>
+            <div className="top-text-light">4 hours ago</div>
           </a> 
         </li>
         <li>
-          <a href="#" class="top-text-block">
-            <div class="top-text-heading">Band request received</div>
-            <div class="top-text-light">4 hours ago</div>
+          <a href="#" className="top-text-block">
+            <div className="top-text-heading">Band request received</div>
+            <div className="top-text-light">4 hours ago</div>
           </a> 
         </li>
         <li>
-          <a href="#" class="top-text-block">
-            <div class="top-text-heading">Julia Thomas is On Air</div>
-            <div class="top-text-light">5 hours ago</div>
+          <a href="#" className="top-text-block">
+            <div className="top-text-heading">Julia Thomas is On Air</div>
+            <div className="top-text-light">5 hours ago</div>
           </a> 
         </li>
        <li>
-        <div class="loader-topbar"></div>
+        <div className="loader-topbar"></div>
        </li>
       </ul>
             <IconButton

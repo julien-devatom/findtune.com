@@ -96,7 +96,7 @@ function BandCard ({band}){
         <div className="card card_band d-flex my-2" >
             <div className="card-body">
                 <div className="row">
-                <div class="col-lg-3 col-md-4">
+                <div className="col-lg-3 col-md-4">
                     <div className="row d-flex justify-content-center">
                         <img src={band.img_url} className="img-fluid img-thumbnail rounded-circle" />
                     </div>

@@ -8,7 +8,6 @@ export default function Flashs(){
         removeFlash(key)
     }
     useEffect(() =>{
-        console.log(flash)
     })
     return(
     <div className="container mt-3">

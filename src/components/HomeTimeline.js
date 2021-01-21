@@ -32,7 +32,7 @@ export default function HomeTimeline({posts}) {
     }
     return (
             <Timeline align={lg ? 'alternate' : 'left'}>
-                {posts.map(post => <HomeItem key={post.id} post={post}/>)}
+                {posts.map((post, key) => <HomeItem key={key} post={post}/>)}
             </Timeline>
 
     );
@@ -138,9 +138,9 @@ function HomeItemVideo({post}){
                     <Typography variant="h6" component="h1">
                         <Link to={"/artist/"+user.id}> {user.username} </Link>
                     </Typography>
-                    <Typography>
+                    <Typography variant="div">
                         {post.message}
-                        <div className="rounded overflow-hidden pb-3">
+                        <div  className="rounded overflow-hidden pb-3">
                             <Player playsInline  src={post.video_url}/>
                         </div>
                     </Typography>
