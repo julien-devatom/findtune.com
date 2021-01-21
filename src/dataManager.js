@@ -58,9 +58,14 @@ const GALLERY = [
 export function getPosts(){
     const postsFromLocalStorage = JSON.parse(localStorage.getItem('posts'))
     if(!postsFromLocalStorage){
+        localStorage.setItem('posts', JSON.stringify(INITIALS_POSTS))
         return INITIALS_POSTS
     }
     return postsFromLocalStorage
+}
+export function addPost(post){
+    const posts = [post, ...(JSON.parse(localStorage.getItem('posts')) || INITIALS_POSTS)]
+    localStorage.setItem('posts', JSON.stringify(posts))
 }
 
 export function getUsers() {
@@ -72,15 +77,16 @@ export function getUsers() {
         return []
     }
 }
+
+/**
+ * Not implemented
+ * @param id
+ * @returns {{id: number, username: string}}
+ */
 export function getUserById(id){
     const users = localStorage.getItem('users')
-    if(!users){
-        return null
-    }
     let _user = null;
     //users.map(user => {if(user.id === id){_user = user}})
-
-    //return _user
     const user = {
         id: 1,
         username: 'Julien'

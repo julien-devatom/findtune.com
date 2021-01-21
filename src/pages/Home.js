@@ -19,11 +19,19 @@ import {Link} from "react-router-dom";
  */
 export const Home = () => {
     const {user} = useContext(UserContext)
-    const {posts, fetchPosts} = usePosts()
+    const {posts, fetchPosts, addPost} = usePosts()
     useEffect(() => {
         fetchPosts()
     }, [])
-
+    const onSubmit = (data) => {
+        console.log(data)
+        addPost({
+            id: Math.floor(Math.random()*9),
+            createdBy: user.id || 1,
+            createdAt: (new Date()).getDate(),
+            ...data
+        })
+    }
     return(<>
             <Header />
             {
@@ -36,7 +44,7 @@ export const Home = () => {
                                     <h3 className="text-primary">Write a post</h3>
                                 </div>
                                 <div className="card-body">
-                                    <PostType/>
+                                    <PostType onSubmit={onSubmit}/>
                                 </div>
                             </div>
                             :

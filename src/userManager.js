@@ -61,7 +61,6 @@ export const getUserFromCredentials = (username, password, fromSession=false ) =
     if(!fromSession){
         sessionStorage.setItem('user', JSON.stringify(user))
     }
-    console.log(user)
     return user
 
 }
