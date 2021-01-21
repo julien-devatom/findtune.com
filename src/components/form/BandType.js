@@ -1,10 +1,10 @@
 import {useForm} from "react-hook-form";
 import {Button} from "@material-ui/core";
 import {Alert} from "@material-ui/lab";
-import {getUsers} from "../../dataManager";
 import Select from "react-select"
 import {useState} from "react";
 import GalleryModal from "../modals/GalleryModal";
+import {getUsers} from "../../userManager";
 
 export default function BandType ({onSubmit, error}) {
     const users = getUsers()

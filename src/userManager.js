@@ -119,4 +119,15 @@ export const getUserById = (id) => {
     })
     return _user || null
 }
+export function getUsers() {
+    const users = JSON.parse(localStorage.getItem('users'))
+    if(users){
+        return users
+    }
+    else{
+        localStorage.setItem('users', JSON.stringify(INITIALS_USERS))
+        return INITIALS_USERS
+    }
+}
+
 

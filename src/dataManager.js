@@ -68,15 +68,6 @@ export function addPost(post){
     localStorage.setItem('posts', JSON.stringify(posts))
 }
 
-export function getUsers() {
-    const users = JSON.parse(localStorage.getItem('users'))
-    if(users){
-        return users
-    }
-    else{
-        return []
-    }
-}
 
 /**
  * Not implemented
@@ -84,7 +75,7 @@ export function getUsers() {
  * @returns {{id: number, username: string}}
  */
 export function getUserById(id){
-    const users = localStorage.getItem('users')
+    const users = localStorage.getItem('users') || getUsers()
     let _user = null;
     //users.map(user => {if(user.id === id){_user = user}})
     const user = {
