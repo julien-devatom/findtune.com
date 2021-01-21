@@ -7,7 +7,6 @@ export default function PostModal({_open}){
     const {isSubmitting} = formState
     const [open, setOpen] = useState(_open)
     const onSubmit = data => {
-        console.log(data)
     }
     return(
         <div className="modal fade" id="postModal" tabIndex="-1" role="dialog"

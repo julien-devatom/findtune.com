@@ -1,9 +1,53 @@
 import sha256 from 'crypto-js/sha256'
+
+//Initials users for the demo
+const INITIALS_USERS = [
+    {
+        id: 4,
+        username: "Julien",
+        password: "password",
+        firstname: "Julien",
+        lastname: "Thomas",
+        instruments: [
+            'guitar',
+            'piano'
+        ],
+        sexe: "m",
+        age: 22
+    },
+    {
+        id: 3,
+        username: "Cartesis",
+        password:"password",
+        firstname: "Hugo",
+        lastname: "Danet",
+        instruments: [
+            'guitar',
+            'beatmaker'
+        ],
+        sexe: "m",
+        age: 21
+    },
+    {
+        id: 2,
+        username: "Issa",
+        password:"password",
+        firstname: "Issa",
+        lastname: "Issa",
+        instruments: [
+            'guitar',
+            'singer'
+        ],
+        sexe: "m",
+        age: 21
+    }
+    ]
+
 /*
     This function looks if the user exist in the localStorage, from credentials, else, it returns null
  */
 export const getUserFromCredentials = (username, password, fromSession=false ) => {
-    const users = JSON.parse(localStorage.getItem('users'))
+    const users = JSON.parse(localStorage.getItem('users')) || INITIALS_USERS
     let user=null;
     //get first user with valid credentials
     if(users === null){
@@ -26,6 +70,7 @@ export const logout = () =>{
 }
 /*
     Get user connection
+    frist, we pass through the session
  */
 export const getUserFromCookies = () => {
     const user = JSON.parse(sessionStorage.getItem('user'))
@@ -38,28 +83,40 @@ export const getUserFromCookies = () => {
     Add one new user to the local storage
  */
 export const createUser = (user) => {
-    const _users = JSON.parse(localStorage.getItem('users'))
+    //generate id
+    user = {
+        id: Math.floor(Math.random()*9),
+        ...user
+    }
+    const _users = JSON.parse(localStorage.getItem('users')) || INITIALS_USERS
     let message={
         success: true
     }
-    if(_users) {
-        _users.map(_user => {
-            if (user.username === _user.username){
-                message= {
-                    success: false,
-                    message: 'Username already used'
-                }
+
+    //uniq username
+    _users.map(_user => {
+        if (user.username === _user.username){
+            message= {
+                success: false,
+                message: 'Username already used'
             }
-        })
-        if(message.success){
-            localStorage.setItem('users', JSON.stringify([user, ..._users]))
         }
-        return message
+    })
+    if(message.success){
+        localStorage.setItem('users', JSON.stringify([user, ..._users]))
     }
-    else{
-        localStorage.setItem('users', JSON.stringify([user]))
-        return message
-    }
+    return message
 }
 
+
+export const getUserById = (id) => {
+    const users = JSON.parse(localStorage.getItem('users')) || INITIALS_USERS
+    let _user
+    users.map(user => {
+        if(parseInt(user.id) === id){
+            _user= user
+        }
+    })
+    return _user || null
+}
 

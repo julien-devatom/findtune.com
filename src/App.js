@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, {useEffect} from "react";
 import './assets/app';
 
 import {
@@ -22,7 +22,6 @@ import "./app.css"
 import 'mdbreact/dist/css/mdb.css'
 import UserProvider from "./providers/userProvider";
 import Logout from "./components/Logout";
-import FlashProvider from "./providers/flashProvider";
 import Flashs from "./components/Flashs";
 
 
@@ -30,13 +29,15 @@ function App() {
     const user = {
         id: 1
     }
+    useEffect(() =>{
+        console.log('The project is open source : https://github.com/korrigans84/findtune.com')
+    })
 
   return (
       <UserProvider>
-          <FlashProvider>
           <Router>
-              <div class="area" >
-                <ul class="circles">
+              <div className="area" >
+                <ul className="circles">
                         <sub></sub>
                         <sub></sub>
                         <sub></sub>
@@ -85,7 +86,7 @@ function App() {
             </div>
               <Footer />
           </Router>
-          </FlashProvider>
+          
       </UserProvider>
   );
 }

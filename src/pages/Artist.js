@@ -5,6 +5,11 @@ import {Divider} from "material-ui";
 import {useState} from "react";
 import {Rating} from "@material-ui/lab";
 
+/**
+ * This is the page of the artist, which show you all this informations.
+ * @returns {JSX.Element}
+ * @constructor
+ */
 export default function Artist () {
     const artist = {
         id: 1,

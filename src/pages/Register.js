@@ -3,6 +3,15 @@ import {useContext, useState} from "react";
 import {UserContext} from "../providers/userProvider";
 import {Redirect, useHistory} from "react-router-dom";
 import {FlashContext} from "../providers/flashProvider";
+
+/**
+ * This is the signin page.
+ * You can create an account, with a unique username
+ * A verification for the repeat password is proccessed.
+ * This page use the RegisterType form
+ * @returns {JSX.Element}
+ * @constructor
+ */
 export const Register = () => {
     const {user, addUser} = useContext(UserContext)
     const {push} = useContext(FlashContext)
