@@ -113,7 +113,8 @@ export const getUserById = (id) => {
     const users = JSON.parse(localStorage.getItem('users')) || INITIALS_USERS
     let _user
     users.map(user => {
-        if(parseInt(user.id) === id){
+
+        if(user.id && parseInt(user.id) === id){
             _user= user
         }
     })

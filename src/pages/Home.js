@@ -53,10 +53,8 @@ export const Home = () => {
             <section className="container">
                 {
                     posts  ? <HomeTimeline posts={posts} />
-                    : <Skeleton variant="pulse" width={"100%"} height={70} className="d-flex align-items-center justify-content-center">
+                    : <Skeleton variant="text" width={"100%"} height={70} className="d-flex align-items-center justify-content-center">
                         <h3 className="text-primary">Loading</h3>
-                            <Skeleton variant="pulse" width={"100%"} height={30} />
-                            <Skeleton variant="pulse" width={"100%"} height={30} />
                         </Skeleton>
                 }
             </section>
