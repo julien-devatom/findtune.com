@@ -22,7 +22,6 @@ import "./app.css"
 import 'mdbreact/dist/css/mdb.css'
 import UserProvider from "./providers/userProvider";
 import Logout from "./components/Logout";
-import FlashProvider from "./providers/flashProvider";
 import Flashs from "./components/Flashs";
 
 
@@ -36,7 +35,6 @@ function App() {
 
   return (
       <UserProvider>
-          <FlashProvider>
           <Router>
               <div className="area" >
                 <ul className="circles">
@@ -88,7 +86,7 @@ function App() {
             </div>
               <Footer />
           </Router>
-          </FlashProvider>
+          
       </UserProvider>
   );
 }
