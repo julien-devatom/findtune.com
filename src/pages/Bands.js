@@ -81,19 +81,17 @@ export default function Bands () {
         }
 
     return(
-        <div>
-            <section className="container mt-4">
-                <BandCard band={band1} />
-                <BandCard band={band2} />
-                <BandCard band={band3} />
-            </section>
-        </div>
+        <section className="container mt-4">
+            <BandCard band={band1} />
+            <BandCard band={band2} />
+            <BandCard band={band3} />
+        </section>
     )
 }
 
 function BandCard ({band}){
     return (
-        <div className="card card_band d-flex my-2" >
+        <article className="card card_band d-flex my-2" >
             <div className="card-body">
                 <div className="row">
                 <div className="col-lg-3 col-md-4">
@@ -135,7 +133,7 @@ function BandCard ({band}){
                 </div>
             </div>
         </div>
-    </div>
+    </article>
     )
 
 }
