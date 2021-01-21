@@ -13,7 +13,7 @@ function reducer(state, action){
 
 export function usePosts(){
     const [state, dispatch] = useReducer(reducer, {
-        posts: null
+        posts: []
     })
 
     return{
