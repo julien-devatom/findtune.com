@@ -32,22 +32,20 @@ export default function Band () {
     }
 
     return(
-        <div>
-            <div className="container mt-3">
+            <section className="container mt-3">
                 <BandCard band={band} />
-            </div>
-        </div>
+            </section>
     )
 }
 
 function BandCard ({band}){
     return(
 
-        <div className="card card_band_profile">
+        <article className="card card_band_profile">
             <div className="card-body">
                 <h1>{band.name}</h1>
             </div>
 
-        </div>
+        </article>
     )
 }

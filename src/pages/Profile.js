@@ -34,13 +34,13 @@ function ProfilePage ({user}){
         console.log(data)
     }
     return(<>
-        <div className="container">
+        <section className="container">
         <div className="row d-flex justify-content-start">
             <h1 className="mr-auto">Welcome {user.username}</h1>
             <Button  variant="contained" color="secondary" data-toggle="modal" data-target="#postModal"><i className="fa fa-plus mr-2" ></i> Create a band ! </Button>
             <PostModal />
         </div>
-        </div>
+        </section>
         <section className="container mt-4">
             <div className="card">
                 <div className="card-header bg-white">

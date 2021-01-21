@@ -33,7 +33,7 @@ export default function Artist () {
     }
 
     return(
-        <div className="container mt-3">
+        <section className="container mt-3">
                <div className="card card_artist_profile">
                    <div className="card-body">
                        <section id="artist_profile">
@@ -94,7 +94,7 @@ export default function Artist () {
                        </section>
                    </div>
                </div>
-        </div>
+        </section>
     )
 }
 
@@ -111,7 +111,7 @@ function MessagePublication() {
         const {liked, setLiked} = useState(publication.liked)
 
         return(
-    <div className="col-md-4 col-sm-6">
+    <article className="col-md-4 col-sm-6">
         <div className="card card_artist_publication">
             <div className="card-body p-4">
                 <p>
@@ -123,6 +123,6 @@ function MessagePublication() {
             </div>
 
         </div>
-    </div>
+    </article>
         )
 }

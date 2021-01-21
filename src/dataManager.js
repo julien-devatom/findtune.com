@@ -22,7 +22,7 @@ const INITIALS_POSTS=[
         liked: true
     },
     {
-        id: 2,
+        id: 3,
         type: 'video',
         video_url: "https://cdn.videvo.net/videvo_files/video/free/2013-12/small_watermarked/CROWD_JUMPS_LIGHTS_PULSE_preview.webm",
         createdBy: 3,
@@ -32,6 +32,7 @@ const INITIALS_POSTS=[
         liked: true
     },
     {
+        id:4,
         type: 'message',
         createdBy: 4,
         createdAt: (new Date()).toString(),
