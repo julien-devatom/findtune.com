@@ -1,6 +1,8 @@
 /**
  * This is an array of fake data to show you the differents features of the website.
  */
+import {getUsers} from "./userManager";
+
 const INITIALS_POSTS=[
     {
         id: 1,
